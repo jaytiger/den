@@ -8,6 +8,16 @@ main:
   - title: "About"
     url: /about/
 
+# documentation links
+docs:
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+      - title: "Structure"
+        url: /docs/structure/
+
+
 sidebar-den:
   - title: "BigQuery"
     children:
@@ -18,7 +28,7 @@ sidebar-den:
       - title: "BigQuery ML"
         url: /
       - title: "BI Analysis"
-        url: /8100-self-bi-hands-on-01.md
+        url: /docs/self-bi-hands-on-01/
   - title: "Python for Data Science"
     children:
       - title: "Python 101"

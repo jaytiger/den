@@ -1,3 +1,13 @@
+---
+title: "Self-BI Hands-on #1"
+permalink: /docs/self-bi-hands-on-01/
+excerpt: "BigQuery Hands-On #1 - Kaggle Data Survey"
+last_modified_at: 2021-11-21T08:48:05-04:00
+redirect_from:
+  - /theme-setup/
+toc: true
+---
+
 이번 글에서는 간단한 BI(Business Intelligence) 분석을 진행하며 비즈니스 질문에 대한 답을 찾아가는 과정을 다뤄보고자 한다.
 
 BigQuery 언어에 익숙하지 않더라도 우선은 분석흐름에 익숙해지는 것을 목표로 제시된 쿼리들을 하나씩 실행하며 결과를 확인해 보도록 하자.
