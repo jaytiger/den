@@ -13,15 +13,17 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Jaytiger's DEN (Data Engineering Note)
+email: jaytiger.park@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
-minimal_mistakes_skin: default
+  현업에서 데이터 엔지니어링과 분석 업무를 수행하며 맞닥뜨린 문제들을 해결해 나가는 과정에서의
+  경험과 지식을 기록으로 남기기 위한 페이지들입니다.
+  대부분은 GCP상에서의 BigQuery를 중심으로 한 데이터 엔지니어링 관련 내용들이며, 데이터 분석 및 과학과 관련한 내용도 같이 포함하고 있습니다.
+  These are pages that record my experience and knowledge that I've faced as a data engineer at work.
+  Most of them are related to data engineering tasks using BigQuery on GCP(Google Clouud Platform) and some of data analysis and science topics are also addressed along with them.
+#twitter_username: username
+github_username: jaytiger
+minimal_mistakes_skin: contrast
 search: true
 
 # Build settings
@@ -58,34 +60,19 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name   : "Jaytiger"
+  avatar : "/assets/images/bio-photo.png"
+  bio    : "Data Engineer @ Some Company in Korea"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/jaytiger"
+    - label: "StackOverflow"
+      url: "https://stackoverflow.com/users/19039920/jaytiger"
 
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+sidebar:
+  title: "Table of Contents"
+  nav: sidebar-den
 
 defaults:
   # _posts

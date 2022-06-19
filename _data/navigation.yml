@@ -7,3 +7,18 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+
+sidebar-den:
+  - title: "BigQuery"
+    children:
+      - title: "BigQuery 101"
+        url: /
+      - title: "BigQuery Advanced"
+        url: /
+      - title: "BigQuery ML"
+        url: /
+      - title: "BI Analysis"
+        url: /
+  - title: "Python for Data Science"
+    children:
+      - title: "Python 101"
