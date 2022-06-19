@@ -12,11 +12,8 @@ main:
 docs:
   - title: Getting Started
     children:
-      - title: "Quick-Start Guide"
-        url: /docs/quick-start-guide/
-      - title: "Structure"
-        url: /docs/structure/
-
+      - title: "Self-BI Hands-on #1"
+        url: /docs/self-bi-hands-on-01/
 
 sidebar-den:
   - title: "BigQuery"

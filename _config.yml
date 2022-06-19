@@ -103,7 +103,7 @@ defaults:
       share: false
       comments: false
       sidebar:
-        nav: "sidebar-den"
+        nav: "docs"
 
 category_archive:
   type: liquid
