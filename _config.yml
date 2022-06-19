@@ -93,12 +93,15 @@ defaults:
       layout: single
       author_profile: true
   # _docs
-  - scope:
+    - scope:
       path: ""
       type: docs
-      type: pages
-      type: posts
     values:
+      layout: single
+      read_time: false
+      author_profile: false
+      share: false
+      comments: false
       sidebar:
         nav: "sidebar-den"
 
@@ -108,3 +111,4 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
