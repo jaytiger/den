@@ -13,11 +13,10 @@ sidebar:
 
 >이번 글에서는 간단한 BI(Business Intelligence) 분석을 진행하며 비즈니스 질문에 대한 답을 찾아가는 과정을 다뤄보고자 한다.
 BigQuery 언어에 익숙하지 않더라도 우선은 분석흐름에 익숙해지는 것을 목표로 제시된 쿼리들을 하나씩 실행하며 결과를 확인해 보도록 하자.
-{: style="color:gray; font-size: 14px;"}
 
 ## ■ 실습 주제 (Hands-On Topic)
 
->Kaggle에서는 해마다 경진대회에 참여하는 데이터 과학자들을 대상으로 설문을 실시하며 그 결과를 공유한다.  
+>Kaggle에서는 해마다 경진대회에 참여하는 데이터 과학자들을 대상으로 설문을 실시하며 그 결과를 공유한다.
 설문에는 데이터 과학자들의 간단한 프로파일 통계와 경력 기간, 급여, 교육 수준 및 선호 도구 등 다양한 항목이 포함되어 있다.
 
 ![kaggle_survey](https://images.velog.io/images/jaytiger/post/b415ac7d-e77c-4ffa-8ef3-699b5ced84e3/kaggle_2021.png)
@@ -25,14 +24,14 @@ BigQuery 언어에 익숙하지 않더라도 우선은 분석흐름에 익숙해
 자세한 내용은 아래 링크를 참조하자.
 - [State of Data Science and Machine Learning 2021](https://www.kaggle.com/c/kaggle-survey-2021)
 
-여러 설문 항목 중 이번 핸즈온에서는 아래와 같은 질문에 대한 답을 찾고자 한다. 
+여러 설문 항목 중 이번 핸즈온에서는 아래와 같은 질문에 대한 답을 찾고자 한다.
 
 ### ▷ 핵심 비즈니스 질문들(Key Business Questions)
 1. 2021년도에 분석가들로부터 가장 많이 선택받은 언어는?
 2. Kaggle 분석가들은 몇 가지 언어로 분석을 진행할까?
 3. 어떤 언어조합이 가장 많이 선호되고 있을까?
 
-## ■ Hands-On 
+## ■ Hands-On
 앞서의 비즈니스 질문에 대한 답을 찾는 과정에는 BigQuery에 데이터를 적재하고 분석이 용이한 형태로 변환하는 ELT(Extract-Load-Transform) 과정이 수반된다.
 
 ### ▷ 데이터 준비 (Data Preparation)
@@ -43,7 +42,7 @@ BigQuery 언어에 익숙하지 않더라도 우선은 분석흐름에 익숙해
 2. EDA(데이터탐색)
    - kaggle_survey_2021_responses.csv 에서 대략적인 데이터 현황과 비즈니스 질문과 관련된 컬럼의 내용을 살핀다.
    - CSV의 경우 분리자(delimeter)와 헤더 및 컬럼 속성 등을 파악해 둔다.
-3. 데이터 업로드 
+3. 데이터 업로드
    - 로컬PC의 파일을 바로 BigQuery에 업로드도 가능하나 파일 크기의 제한(10MB)이 있다.
    - 이로 인해 큰 파일은 Clodud Storage에 업로드 후 BigQuery로 적재하는 것이 일반적이다.
    - 이번 핸즈온에서 Cloud Storage 대신 Google Drive에 파일을 올려 실습토록 하겠다.
@@ -67,14 +66,14 @@ BigQuery Dataset은 테이블 또는 뷰(View)들을 담고 있는 컨테이너�
    - https://console.cloud.google.com/bigquery?project=************
    - `project`에는 본인이 생성한 GCP 프로젝트의 이름 사용할 것 - 상단에 본인 프로젝트(ex. learning-club-2020)가 선택되어 있는지 먼저 확인
      ![BigQuery Console](https://images.velog.io/images/jaytiger/post/d5781f5c-95b8-4c11-bee0-c940de99b4d7/bigquery_console.png)
- 
+
 2. Dataset 생성
    - 테이블을 저장할 Dataset 생성 - 왼쪽 프로젝트 리스트 목록에서 내 프로젝트를 선택하면 오른쪽 `[+] 데이터세트 만들기` 버튼을 누르면 데이터셋 생성 팝업이 뜸.
      ![BigQuery Dataset1](https://images.velog.io/images/jaytiger/post/755dcf05-3ec9-42b8-ac48-4e8f14a670ee/bigquery_dataset_create.png)
      ![BigQuery Dataset2](https://images.velog.io/images/jaytiger/post/24f35c26-19e5-49e5-98c5-a28bd4be187f/bigquery_dataset_create2.png)
-     
 
-데이터셋이 준비되었으니 CSV로 되어 있는 설문데이터를 BigQuery 테이블로 옮길 차례이다. 
+
+데이터셋이 준비되었으니 CSV로 되어 있는 설문데이터를 BigQuery 테이블로 옮길 차례이다.
 
 이 때 아래와 같이 가능한 방법 몇 가지가 있는데 이번 실습에서는 이 중에서 두 번째 방법을 사용하도록 한다.
 
@@ -83,12 +82,12 @@ BigQuery Dataset은 테이블 또는 뷰(View)들을 담고 있는 컨테이너�
 
 __BigQuery 외부 테이블 (External Table) 생성__
 
-BigQuery는 DDL(Data Definition Language) 문으로 외부 저장소에 위치한 데이터를 참조하는 External Table 생성이 가능하다. 
+BigQuery는 DDL(Data Definition Language) 문으로 외부 저장소에 위치한 데이터를 참조하는 External Table 생성이 가능하다.
 
 앞서 확인한 Google Drive URI를 사용하여 테이블을 생성하는 BigQuery 구문은 다음과 같다.
 
 ```sql
-CREATE OR REPLACE EXTERNAL TABLE learning_club.kaggle_survey_2021 
+CREATE OR REPLACE EXTERNAL TABLE learning_club.kaggle_survey_2021
 OPTIONS (
   format = 'CSV',
   skip_leading_rows = 2,
@@ -160,7 +159,7 @@ BigQuery 스럽게 `ARRAY`를 사용하게 되면 좀 더 간결하게 쿼리 �
 ```sql
 WITH tidy AS (
   SELECT id, lang FROM (
-    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages 
+    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages
       FROM learning_club.survey_raw
   ), UNNEST(languages) AS lang
 )
@@ -177,7 +176,7 @@ WITH tidy AS (
     FROM learning_club.survey_raw
  UNPIVOT (dummy FOR lang IN (Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other))
 )
-SELECT * FROM tidy WHERE lang IS NOT NULL;  
+SELECT * FROM tidy WHERE lang IS NOT NULL;
 ```
 
 |Row|	id|	lang	|
@@ -191,7 +190,7 @@ SELECT * FROM tidy WHERE lang IS NOT NULL;
 |...|...|...|
 
 
-주어진 원시데이터(raw data)가 내가 원하는 형태로 주어지는 경우는 거의 없으므로 쿼리를 통해서 테이블의 형태를 원하는 모습으로 변환시킬 수 있는 연습이 필요하다. 
+주어진 원시데이터(raw data)가 내가 원하는 형태로 주어지는 경우는 거의 없으므로 쿼리를 통해서 테이블의 형태를 원하는 모습으로 변환시킬 수 있는 연습이 필요하다.
 
 `ARRAY`를 사용하는 방법으로 다음 분석을 이어가도록 하자.
 
@@ -204,14 +203,14 @@ SELECT * FROM tidy WHERE lang IS NOT NULL;
 ```sql
 WITH tidy AS (
   SELECT id, lang FROM (
-    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages 
+    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages
       FROM learning_club.survey_raw
   ), UNNEST(languages) AS lang
 )
-SELECT lang, COUNT(1) AS cnt 
+SELECT lang, COUNT(1) AS cnt
   FROM tidy
- WHERE lang IS NOT NULL 
- GROUP BY 1 
+ WHERE lang IS NOT NULL
+ GROUP BY 1
  ORDER BY 2 DESC;
 ```
 
@@ -233,23 +232,23 @@ __언어별 선호도 시각화__
 
 > 2. 두번째 질문 - Kaggle 분석가들은 몇 가지 언어로 분석을 진행할까?
 
-이 질문에 대한 답을 위해서는 사용자별로 사용하는 언어의 갯수를 먼저 집계한 후, 언어의 갯수를 차원(dimension)으로 하는 집계를 한 번 더 수행해야 한다. 
+이 질문에 대한 답을 위해서는 사용자별로 사용하는 언어의 갯수를 먼저 집계한 후, 언어의 갯수를 차원(dimension)으로 하는 집계를 한 번 더 수행해야 한다.
 
 ```sql
 WITH tidy AS (
   SELECT id, lang FROM (
-    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages 
+    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages
       FROM learning_club.survey_raw
   ), UNNEST(languages) AS lang
 )
-SELECT languages, COUNT(1) AS cnt 
+SELECT languages, COUNT(1) AS cnt
   FROM (
   -- 사용자별로 사용하는 언어들을 배열로 묶음.
-    SELECT id, COUNT(1) AS languages 
+    SELECT id, COUNT(1) AS languages
       FROM tidy WHERE lang IS NOT NULL
      GROUP BY 1
-  ) 
- GROUP BY 1 
+  )
+ GROUP BY 1
  ORDER BY 2 DESC;
 ```
 
@@ -264,19 +263,19 @@ SELECT languages, COUNT(1) AS cnt
 
 > 3. 세번째 질문 - 어떤 언어조합이 가장 많이 선호되고 있을까?
 
-이 질문에 대한 쿼리를 작성하기 위해서 언어조합을 하나의 문자열로 표현하고 이를 `GROUP BY`하여 집계하였다. 
+이 질문에 대한 쿼리를 작성하기 위해서 언어조합을 하나의 문자열로 표현하고 이를 `GROUP BY`하여 집계하였다.
 
 ```sql
 WITH tidy AS (
   SELECT id, lang FROM (
-    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages 
+    SELECT id, [Python, R, SQL, C, Java, Javascript, Julia, Swift, Bash, MATLAB, Other] AS languages
       FROM learning_club.survey_raw
   ), UNNEST(languages) AS lang
 )
-SELECT ARRAY_TO_STRING(languages, ', ') langs, COUNT(1) AS cnt 
+SELECT ARRAY_TO_STRING(languages, ', ') langs, COUNT(1) AS cnt
   FROM (
   -- 사용자별로 사용하는 언어들을 배열로 묶음.
-    SELECT id, ARRAY_AGG(lang IGNORE NULLS ORDER BY lang) AS languages 
+    SELECT id, ARRAY_AGG(lang IGNORE NULLS ORDER BY lang) AS languages
       FROM tidy GROUP BY 1
   )
  WHERE ARRAY_LENGTH(languages) = 2
