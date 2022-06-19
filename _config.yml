@@ -85,8 +85,6 @@ defaults:
       comments: true
       share: true
       related: true
-      sidebar:
-        nav: "sidebar-den"
   # _pages
   - scope:
       path: "_pages"
@@ -94,6 +92,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "sidebar-den"
   # _docs
   - scope:
       path: "_docs"
