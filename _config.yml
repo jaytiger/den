@@ -89,6 +89,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "sidebar-den"
   # _docs
   - scope:
       path: ""
@@ -96,6 +98,7 @@ defaults:
     values:
       sidebar:
         nav: "sidebar-den"
+
 
 category_archive:
   type: liquid
