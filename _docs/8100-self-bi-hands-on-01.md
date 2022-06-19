@@ -11,9 +11,9 @@ sidebar:
   nav: "docs"
 ---
 
-이번 글에서는 간단한 BI(Business Intelligence) 분석을 진행하며 비즈니스 질문에 대한 답을 찾아가는 과정을 다뤄보고자 한다.
-
+>이번 글에서는 간단한 BI(Business Intelligence) 분석을 진행하며 비즈니스 질문에 대한 답을 찾아가는 과정을 다뤄보고자 한다.
 BigQuery 언어에 익숙하지 않더라도 우선은 분석흐름에 익숙해지는 것을 목표로 제시된 쿼리들을 하나씩 실행하며 결과를 확인해 보도록 하자.
+{: style="color:gray; font-size: 14px;"}
 
 ## ■ 실습 주제 (Hands-On Topic)
 
