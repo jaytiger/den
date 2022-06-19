@@ -18,7 +18,8 @@ sidebar-den:
       - title: "BigQuery ML"
         url: /
       - title: "BI Analysis"
-        url: /
+        url: /docs/self-bi-hands-on-01/
+      - title: "Configuration"
   - title: "Python for Data Science"
     children:
       - title: "Python 101"

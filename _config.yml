@@ -21,6 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   대부분은 GCP상에서의 BigQuery를 중심으로 한 데이터 엔지니어링 관련 내용들이며, 데이터 분석 및 과학과 관련한 내용도 같이 포함하고 있습니다.
   These are pages that record my experience and knowledge that I've faced as a data engineer at work.
   Most of them are related to data engineering tasks using BigQuery on GCP(Google Clouud Platform) and some of data analysis and science topics are also addressed along with them.
+
 #twitter_username: username
 github_username: jaytiger
 minimal_mistakes_skin: contrast
@@ -33,7 +34,7 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -68,6 +69,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jaytiger"
     - label: "StackOverflow"
+      icon: "fab fa-fw fa-stack-overflow"
       url: "https://stackoverflow.com/users/19039920/jaytiger"
 
 defaults:
@@ -89,8 +91,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-      sidebar:
-        nav: "sidebar-den"
   # _docs
   - scope:
       path: ""
@@ -98,7 +98,6 @@ defaults:
     values:
       sidebar:
         nav: "sidebar-den"
-
 
 category_archive:
   type: liquid
