@@ -6,6 +6,8 @@ last_modified_at: 2021-11-21T08:48:05-04:00
 layout: single
 classes: wide
 toc: true
+sidebar:
+  nav: "docs"
 ---
 
 이번 글에서는 간단한 BI(Business Intelligence) 분석을 진행하며 비즈니스 질문에 대한 답을 찾아가는 과정을 다뤄보고자 한다.
