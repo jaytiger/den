@@ -39,6 +39,7 @@ timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zo
 include:
   - _pages
   - _docs
+  - _posts
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -74,9 +75,21 @@ author:
       url: "https://stackoverflow.com/users/19039920/jaytiger"
 
 defaults:
-  # _posts
+  # landing
   - scope:
       path: ""
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      sidebar:
+        nav: "sidebar-den"
+
+  # _posts
+  - scope:
+      path: "_posts"
       type: posts
     values:
       layout: single
