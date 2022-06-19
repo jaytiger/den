@@ -93,7 +93,7 @@ defaults:
       layout: single
       author_profile: true
   # _docs
-    - scope:
+  - scope:
       path: ""
       type: docs
     values:
