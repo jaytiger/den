@@ -70,20 +70,6 @@ author:
     - label: "StackOverflow"
       url: "https://stackoverflow.com/users/19039920/jaytiger"
 
-sidebar:
-  title: "Table of Contents"
-  nav: "sidebar-den"
-
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
-
-
-
 defaults:
   # _posts
   - scope:
@@ -103,6 +89,13 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "sidebar-den"
 
 category_archive:
   type: liquid
