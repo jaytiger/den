@@ -6,7 +6,7 @@ last_modified_at: 2021-11-21T08:48:05-04:00
 layout: single
 #classes: wide
 toc: true
-toc_sticky: false
+toc_sticky: true
 sidebar:
   nav: "docs"
 ---
