@@ -3,6 +3,7 @@ title: "Self-BI Hands-on #1"
 permalink: /docs/self-bi-hands-on-01/
 excerpt: "BigQuery Hands-On #1 - Kaggle Data Survey"
 last_modified_at: 2021-11-21T08:48:05-04:00
+layout: single
 toc: true
 ---
 
