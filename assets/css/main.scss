@@ -8,8 +8,8 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 // @font-face {
 // 	font-weight: normal;
 // 	font-style: normal;
@@ -18,7 +18,8 @@ search: false
 
 body {
     font-size: 16px; // change to whatever
-    font-family: 'Noto Serif KR';
+    // font-family: 'Noto Serif KR';
+    font-family: 'Dongle', sans-serif;
 
     // @include breakpoint($medium) {
     //     font-size: 14px; // change to whatever
