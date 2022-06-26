@@ -111,7 +111,7 @@ SELECT *, depno
   FROM `bigdata-adhoc.open_mart_ds.dept`;
 ```
 
->**[BigQuery]** *(star) 이후에 특정 컬럼을 한 번 더 출력하는 경우, 교재의 설명에 따른 `테이블명.*` 이 아닌 `*` 이후에 컬럼명을 작성하시면 됩니다.
+>*(star) 이후에 특정 컬럼을 한 번 더 출력하는 경우, 교재의 설명에 따른 `테이블명.*` 이 아닌 `*` 이후에 컬럼명을 작성하시면 됩니다.
 `테이블명.*`의 사용은 **묶여진 식별자(quoted identifier)** 와 **묵시적 별칭(implicit alias)** 간의 관계 등으로 인해 BigQuery에서는 아래의 형태가 가능합니다.
 
 ```sql
@@ -137,7 +137,7 @@ SELECT empno AS employee_number, ename AS employee_name, sal AS salary
 
 **계산된 컬럼**과 **상수 컬럼**은 새롭게 만들어진 네모이기 때문에 이름(별칭)을 새로 지어 줍니다.
 
->**[BIgQuery]** BigQuery는 한글 컬럼명을 지원하지 않습니다. 알파벳, 숫자, _(underscore) 로만 컬럼이름이 만들어져야 합니다.
+>BigQuery는 한글 컬럼명을 지원하지 않습니다. 알파벳, 숫자, _(underscore) 로만 컬럼이름이 만들어져야 합니다.
 
 ```sql
 SELECT ename, sal * (12 + 3000) AS monthly_pay
@@ -166,7 +166,7 @@ SELECT ename || '의 월급은 ' || sal || '입니다.' AS salary_info,
 
 *DISTINCT col1, col2* 은 나열된 컬럼들의 Unique한 조합을 출력해 줍니다.
 
->**[BigQuery]** `UNIQUE`는 오라클에서만 지원하며 BigQuery에서 지원되지 않습니다.
+>`UNIQUE`는 오라클에서만 지원하며 BigQuery에서 지원되지 않습니다.
 
 ```sql
 SELECT job FROM `bigdata-adhoc.open_mart_ds.emp`;
@@ -245,7 +245,7 @@ SELECT ename, sal, job
 +----------+--------------------------+
 ```
 
->**[BigQuery]** 교졔 예시에서는 한글 컬럼 이름을 자주 사용하는데 앞서 설명에서처럼 BigQuery에서는 허용되지 않습니다.
+>교졔 예시에서는 한글 컬럼 이름을 자주 사용하는데 앞서 설명에서처럼 BigQuery에서는 허용되지 않습니다.
 
 **SELECT .. FROM .. WHERE** 의 SQL 문장구조에서 해석 순서는 **FROM** --> **WHERE** --> **SELECT** 입니다.
 따라서 **SELECT** 절에서 정의된 컬럼의 별칭들은 **WHERE** 절에서 참조될 수 없습니다.
@@ -267,7 +267,7 @@ SELECT ename, sal, job, hiredate, deptno
  WHERE hiredate = '1981-11-17';
 ```
 
->**[BigQuery]** 008**장 뒷 부분의 세션 파라미터 변경은 ORACLE에만 적용되는 내용이라 스킵하셔도 무방합니다.
+>008**장 뒷 부분의 세션 파라미터 변경은 ORACLE에만 적용되는 내용이라 스킵하셔도 무방합니다.
 
 #### 009. 산술 연산자 배우기 (*, /, +, -)
 
@@ -281,7 +281,7 @@ SELECT ename, sal * 12 AS annual_salary
 -- SELECT 300 + 200 * 2 FROM DUAL;  -- 오라클 SQL
 SELECT 300 + 200 * 2;
 ```
->**[BigQuery]** 오라클 SQL은 `FROM` 절이 없으면 실행이 되지 않기 때문에 `FROM DUAL` 이라는 Dummy 테이블을 사용합니다.
+>오라클 SQL은 `FROM` 절이 없으면 실행이 되지 않기 때문에 `FROM DUAL` 이라는 Dummy 테이블을 사용합니다.
 BigQuery에서는 `FROM` 절 없이 `SELECT` 절 만으로도 실행이 가능합니다.
 
 ```sql
@@ -313,7 +313,7 @@ SELECT ename, sal, comm, sal + IFNULL(comm, 0) AS sum
 |   3 | CLARK  | 2450 | null | 2450 |
 +-----+--------+------+------+------+
 ```
->**[BigQuery]** NVL()은 BigQuery에서 IFNULL() 또는 COALESCE() 함수로 대체해서 사용합니다.
+>NVL()은 BigQuery에서 IFNULL() 또는 COALESCE() 함수로 대체해서 사용합니다.
 
 ▷ **NULL** ?
 
@@ -363,7 +363,7 @@ SELECT ename, hiredate
   FROM `bigdata-adhoc.open_mart_ds.emp`
  WHERE hiredate BETWEEN '1982-01-01' ADN '1982-12-31'
 ```
->**[BigQuery]** 교재에서는 기본 날짜 형식을 바꾸어 사용하고 있는데 BigQuery에서는 'YYYY-MM-DD' 형식으로 사용해야 합니다.
+>교재에서는 기본 날짜 형식을 바꾸어 사용하고 있는데 BigQuery에서는 'YYYY-MM-DD' 형식으로 사용해야 합니다.
 
 #### 012. 비교 연산자 배우기 ③ (LIKE) 
 
@@ -425,7 +425,7 @@ SELECT ename, sal, job
 
 #### Part I을 마치며
 
-지금까지 SQL의 가장 기본적인 **SELECT .. FROM ... WHERE ... *** 문장구조와 몇 가지 연산자, 함수 등을 살펴보았습니다.
+지금까지 SQL의 가장 기본적인 **SELECT .. FROM ... WHERE ... ** 문장구조와 몇 가지 연산자, 함수 등을 살펴보았습니다.
 이를 토대로 살을 붙여가며 좀 더 복잡한 문장을 만들어가게 되기 때문에 Part I 에서의 기본기가 중요합니다.
 
 이어서 Part II 에서는 함수의 사용법과 집계 함수를 사용하기 위한 문장 구조를 다뤄보도록 하겠습니다.
