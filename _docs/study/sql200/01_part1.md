@@ -1,3 +1,15 @@
+---
+title: "SQL 200 - Part I"
+permalink: /docs/study/sql200/part1/
+last_modified_at: 2022-06-25T08:48:05
+layout: single
+#classes: wide
+toc: true
+toc_sticky: true
+sidebar:
+  nav: "sql200"
+---
+
 ## Book Study 를 시작하며
 
 **sql200** 시리즈는 사내 스터디 모임에서 사용하는 교재의 **PL/SQL** 실습 쿼리를 **BigQuery** 로 작성할 수 있도록 차이점들을 설명하고 있습니다.

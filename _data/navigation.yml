@@ -15,6 +15,12 @@ docs:
       - title: "Self-BI Hands-on #1"
         url: /docs/self-bi-hands-on-01/
 
+sql200:
+  - title: Book Study - SQL 200 for a begineer
+    children:
+      - title: "SQL200 - Part 1"
+        url: /docs/study/sql200/part1/
+
 sidebar-den:
   - title: "BigQuery"
     children:
