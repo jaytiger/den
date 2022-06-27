@@ -228,7 +228,7 @@ SELECT ename, deptno, sal
 
 #### 007. WHERE 절 배우기 ① (숫자 데이터 검색)
 
->```sql
+```sql
 SELECT ename, sal, job
   FROM `bigdata-adhoc.open_mart_ds.emp`
  WHERE sal = 3000;
