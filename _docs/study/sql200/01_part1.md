@@ -18,6 +18,9 @@ sidebar:
   - http://www.yes24.com/Product/Goods/90226600
   - 참고 파일 - http://www.infopub.co.kr/new/down1/5674-850.zip
 
+- Part 4 : SQL 응용 다지기 - 공공데이터를 이용한 분석 예시들이 소개되고 있습니다. 139장 이후로는 PL/SQL 문법이 소개되고 있는데 BigQuery Procedural Language 에 해당하며 초급을 넘어서는 내용이므로 스터디에서 다루지는 않을 예정입니다.
+- Part 5 : SQL 실무 다지기 - 데이터마이닝과 기계학습 관련 내용으로 BigQuer ML 문법으로 수행가능합니다. 이번 스터디 범위에 포함되지는 않습니다.
+
 ### Sample Tables
 
 교재에서 사용되는 예시 테이블들 BigQuery **임시 테이블(Temp Table)** 로 만들기 위한 쿼리입니다.
@@ -53,7 +56,7 @@ INSERT INTO emp VALUES
 (7654,'MARTIN','SALESMAN',7698,'1981-09-10',1250,1400,30),
 (7499,'ALLEN','SALESMAN',7698,'1981-02-11',1600,300,30),
 (7844,'TURNER','SALESMAN',7698,'1981-08-21',1500,0,30),
-(7900,'JAMES','CLERK',7698,'1981-12-11',950,NULL,30),
+(7900,'JAMES','CLERK',7698,'1981-12-11',950,NULL,30), 
 (7521,'WARD','SALESMAN',7698,'1981-02-23',1250,500,30),
 (7902,'FORD','ANALYST',7566,'1981-12-11',3000,NULL,20),
 (7369,'SMITH','CLERK',7902,'1980-12-11',800,NULL,20),
@@ -95,12 +98,16 @@ INSERT INTO salgrade  VALUES
 
 #### 001. 테이블에서 특정 열(Column) 선택하기
 
+BigQuery는 컬럼이름의 대소문자를 가리지 않습니다. **SELECT** 키워드 다음에 컬럼 이름을 나열하면 조회하고자 하는 컬럼들만 출력이 됩니다.
+
 ```sql
 SELECT empno, ename, sal
   FROM `bigdata-adhoc.open_mart_ds.emp`;
 ```
 
 #### 002. 테이블에서 모든 열(Column) 가져오기
+
+별표(*, star)를 이용하여 모든 컬럼을 가져올 수 있습니다.
 
 ```sql
 SELECT *
@@ -146,6 +153,12 @@ SELECT ename, sal * (12 + 3000) AS monthly_pay
 ```
 
 여기서 `sal * (12 + 3000)` 은 원자재 창고에 해당하는 테이블 (base table) 에서 네모를 가져와 새롭게 가공해 낸 네모입니다.  새롭게 만들어진 네모이기 때문에 **monthly_pay** 별칭을 붙여줍니다.
+
+컬럼 별칭을 backtick(`) 감싸줘야 하는 경우는 이름이 SQL 문법에서 이미 그 용도가 정의된 단어를 컬럼 이름(별칭)으로 사용하고자 하는 경우입니다.  예를 들어, **from** 을 컬럼이름으로 사용하고자 하면 아래와 같이 표현해야 합니다.
+
+```sql
+SELECT *, '2022-07-01' AS `from` FROM table;
+```
 
 #### 004. 연결 연산자 사용하기
 
@@ -249,6 +262,8 @@ SELECT ename, sal, job
 
 **SELECT .. FROM .. WHERE** 의 SQL 문장구조에서 해석 순서는 **FROM** --> **WHERE** --> **SELECT** 입니다.
 따라서 **SELECT** 절에서 정의된 컬럼의 별칭들은 **WHERE** 절에서 참조될 수 없습니다.
+
+{% include figure image_path="/assets/images/select-from-where.png" %}
 
 #### 008. WHERE 절 배우기 ② (문자와 날짜 검색)
 
@@ -421,7 +436,6 @@ SELECT ename, sal, job
 ```
 
 교재 진리표는 외워 주시기 바랍니다.
-
 
 #### Part I을 마치며
 
