@@ -24,6 +24,8 @@ sql200:
         url: /docs/study/sql200/part2_1/
       - title: "SQL 200 - Part II-2"
         url: /docs/study/sql200/part2_2/
+      - title: "SQL 200 - Part III"
+        url: /docs/study/sql200/part3_1/
 
 sidebar-den:
   - title: "BigQuery"
